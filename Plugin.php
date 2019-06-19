@@ -40,4 +40,13 @@ class Plugin
     {
 
     }
+
+    /*
+     * Retourne le SDK de Wizishop
+     * Retourne une instance avec le token deja enregistrer
+     */
+    public function stock()
+    {
+
+    }
 }
