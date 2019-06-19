@@ -9,8 +9,13 @@ class Cegid extends Plugin implements PluginMap
         return [ 'updateAccount' ];
     }
 
-    public function hookupdateAccount()
+    public function hook_updateAccount()
     {
 
+    }
+
+    protected function getPluginKey()
+    {
+        return "Cegid" ;
     }
 }

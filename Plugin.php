@@ -1,14 +1,33 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Guillaume
- * Date: 12/06/2019
- * Time: 11:06
- */
 
 class Plugin
 {
-    public function hook()
+    public function install()
+    {
+        if ( ! empty( $this->registerHook() ) )
+        {
+            foreach( $this->registerHook() as $hook )
+            {
+                $this->hook()->add( $hook , $this->getPluginKey() ) ;
+            }
+        }
+    }
+
+    public function uninstall()
+    {
+        if ( ! empty( $this->registerHook() ) )
+        {
+            foreach( $this->registerHook() as $hook )
+            {
+                $this->hook()->remove( $hook , $this->getPluginKey() ) ;
+            }
+        }
+    }
+
+    /*
+     * Retourne une instance hook
+     */
+    private function hook()
     {
 
     }
@@ -18,14 +37,6 @@ class Plugin
      * Retourne une instance avec le token deja enregistrer
      */
     public function api()
-    {
-
-    }
-
-    /*
-     * Retourne un token valide pour la boutique
-     */
-    public function getToken()
     {
 
     }
